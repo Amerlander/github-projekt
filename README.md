@@ -1,31 +1,94 @@
+# Titel des Tutorials
 
-> Diese Seite bei [https://amerlander.github.io/github-projekt/](https://amerlander.github.io/github-projekt/) öffnen
+Hier kommen optionale Einstellungen für das Tutorial hin:
+- Hinweise immer einbleden: @explicitHints
+- Unterschiede zwischen den Schritten in Codeblöcken anzeigen: @diffs
+- alle verfügbaren Blöcke anzeigen: @flyoutOnly
 
-## Als Erweiterung verwenden
+### @diffs true
+### @flyoutOnly true
 
-Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
+Zusätzlich verfügbare Blöcke definieren:
+```ghost
+let x = 0
+```
 
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Neues Projekt**
-* klicke auf **Erweiterungen** unter dem Zahnrad-Menü
-* nach **https://github.com/amerlander/github-projekt** suchen und importieren
+Startcode definieren:
+```template
+input.onButtonPressed(Button.A, function () {
+    basic.showIcon(IconNames.Heart)
+})
+```
 
-## Dieses Projekt bearbeiten ![Build Status Abzeichen](https://github.com/amerlander/github-projekt/workflows/MakeCode/badge.svg)
+## Der erste Schritt @unplugged
 
-Um dieses Repository in MakeCode zu bearbeiten.
+Willkomen zum Tutorial.
 
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Importieren** und dann auf **Importiere URL**
-* füge **https://github.com/amerlander/github-projekt** ein und klicke auf Importieren
+Geschrieben wird in anlehnung an [MarkDown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
-## Blockvorschau
+### Formatierungen:
+- *Kursiv*
+- **Fett**
+- ***Fett-Kursiv***
 
-Dieses Bild zeigt den Blockcode vom letzten Commit im Master an.
-Die Aktualisierung dieses Bildes kann einige Minuten dauern.
+## Der zweite Schritt @fullscreen
 
-![Eine gerenderte Ansicht der Blöcke](https://github.com/amerlander/github-projekt/raw/master/.github/makecode/blocks.png)
+Als alternative zu `|@explicitHints|` kann für einzelne schritte auch `|@fullscreen|` gesetzt werden.
 
-#### Metadaten (verwendet für Suche, Rendering)
+```
+```
 
-* for PXT/calliopemini
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+Text hinter den Blöcken oder einem Bild wird auch im Hinweis angezeigt.
+
+
+## Dritter Schritt
+Setze einen `||led:plot||` Block in die `||basic:Dauerhaft||` Schleife.
+
+```blocks
+basic.forever(function () {
+   led.plot(0, 0)
+})
+```
+
+## Vierter schritt mit Änderung am Code
+
+Wir fügen noch einen `||basic:zeige Symbol||` Block hinzu
+
+```blocks
+basic.forever(function () {
+   led.plot(0, 0)
+   basic.showIcon(IconNames.Heart)
+})
+```
+
+
+## 5) Einen Codeblock hervorheben
+
+Wir fügen noch einen `||basic:zeige Symbol||` Block hinzu
+
+```blocks
+basic.forever(function () {
+   led.plot(0, 0)
+   // @highlight
+   basic.showIcon(IconNames.Heart)
+})
+```
+
+## 6) Bilder
+
+Bilder können über öffentliche Links eingebunden werden.
+
+![Animation A und B Buttons](https://github.com/Amerlander/tutorials/raw/master/calliope/tutorials/03_smiley_button_animation.gif)
+
+
+## 7) Links
+
+ Du hast Fragen? Besuche das [Forum](https://forum.calliope.cc) und hole dir Hilfe aus der Community
+
+Oder mit sichtbarem Link: https://forum.calliope.cc
+
+## 8) Tutorial sperren
+Um das Tutorial zu sperren und zu verhindern, dass User das Tutorial verlassen können kann die URL vor dem Teilen angepasst werden:
+
+**?lockedEditor=1** vor **#tutorial:** setzen:
+https://makecode.calliope.cc/#tutorial:84629-36395-36880-66802 zu https://makecode.calliope.cc/?lockedEditor=1#tutorial:84629-36395-36880-66802
